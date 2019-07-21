@@ -1,0 +1,50 @@
+                                 Magic Swf
+
+       Simple tool for converting Abobe flash movie to self-played movie
+                This software made by Popov Evgeniy Alekseyevich
+
+                               Version 1.1.1
+
+System requirement
+
+48 kilobytes free space on storage media.
+
+Description and usage
+
+This program let you convert an Abobe flash movie to stand-alone self-played movie.
+Self-played movie is executable file: it combinate built-in player and the Flash movie in one file.
+This program takes a file name of Flash Player Projector and Flash movie file name as command line arguments.
+
+Additional software
+
+You need Flash Player Projector. You can take it here: http://www.adobe.com/support/flashplayer/downloads.html
+
+Exit codes
+
+0 - Operation was successfully complete.
+1 - Can't open input file.
+2 - Can't create output file.
+3 - Can't allocate memory.
+4 - Flash movie was corrupted.
+
+License
+
+This program distributed under GNU GENERAL PUBLIC LICENSE.
+
+Source code
+
+The program source code was compiled under Open Watcom.
+But you can do it under any modern C compiler.
+
+Contact
+
+You can send me a letter to tuzik87@inbox.ru.
+
+Version history
+
+0.1 — 0.8 - Unstable branch.
+0.9 - Project name was changed. Stable branch.
+0.9.1 - 0.9.8 - Small changes.
+0.9.9 - Small bug was fixed.
+1.0 - 1.1 - Small changes.
+1.1.1 - Source code was recompiled under Open Watcom.
