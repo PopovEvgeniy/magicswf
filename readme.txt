@@ -1,9 +1,9 @@
                                  Magic Swf
 
-       Simple tool for converting Abobe flash movie to self-played movie
+       Simple tool for converting Adobe flash movie to self-played movie
                 This software made by Popov Evgeniy Alekseyevich
 
-                               Version 1.1.1
+                               Version 1.2
 
 System requirement
 
@@ -11,7 +11,7 @@ System requirement
 
 Description and usage
 
-This program let you convert an Abobe flash movie to stand-alone self-played movie.
+This program let you convert an Adobe flash movie to stand-alone self-played movie.
 Self-played movie is executable file: it combinate built-in player and the Flash movie in one file.
 This program takes a file name of Flash Player Projector and Flash movie file name as command line arguments.
 
@@ -25,7 +25,8 @@ Exit codes
 1 - Can't open input file.
 2 - Can't create output file.
 3 - Can't allocate memory.
-4 - Flash movie was corrupted.
+4 - Executable file of Flash Player Projector was corrupted.
+5 - Flash movie was corrupted.
 
 License
 
@@ -48,3 +49,4 @@ Version history
 0.9.9 - Small bug was fixed.
 1.0 - 1.1 - Small changes.
 1.1.1 - Source code was recompiled under Open Watcom.
+1.2 - Small changes.
