@@ -20,7 +20,7 @@ char* get_name(const char *name,const char *ext);
 
 unsigned long int copy_file(FILE *input,FILE *output);
 void check_executable(FILE *input);
-void check_signature(FILE *input);
+void check_signature(FILE *input,FILE *output,const char *name);
 void write_service_information(FILE *output,const unsigned long int length);
 void compile_flash(const char *player,const char *flash,const char *result);
 void work(const char *player,const char *flash);
@@ -45,7 +45,7 @@ void show_intro()
 {
  putchar('\n');
  puts("Magic swf");
- puts("Version 1.2");
+ puts("Version 1.3");
  puts("Simple tool for converting Adobe flash movie to self-played movie");
  puts("This sofware made by Popov Evgeniy Alekseyevich,2011-2019 years");
  puts("This software distributed under GNU GENERAL PUBLIC LICENSE");
@@ -199,7 +199,7 @@ void check_executable(FILE *input)
 
 }
 
-void check_signature(FILE *input)
+void check_signature(FILE *input,FILE *output,const char *name)
 {
  char signature[3];
  fread(signature,sizeof(char),3,input);
@@ -208,6 +208,9 @@ void check_signature(FILE *input)
   if (strncmp(signature,"CWS",3)!=0)
   {
    puts("Flash movie was corrupted");
+   fclose(input);
+   fclose(output);
+   remove(name);
    exit(5);
   }
 
@@ -234,7 +237,7 @@ void compile_flash(const char *player,const char *flash,const char *result)
  copy_file(input,output);
  fclose(input);
  input=open_input_file(flash);
- check_signature(input);
+ check_signature(input,output,result);
  length=copy_file(input,output);
  fclose(input);
  write_service_information(output,length);
