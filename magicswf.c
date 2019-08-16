@@ -10,6 +10,7 @@ void show_end_message();
 
 FILE *open_input_file(const char *name);
 FILE *create_output_file(const char *name);
+void fast_data_dump(FILE *input,FILE *output,const size_t length);
 void data_dump(FILE *input,FILE *output,const size_t length);
 unsigned long int get_file_size(FILE *file);
 
@@ -45,7 +46,7 @@ void show_intro()
 {
  putchar('\n');
  puts("Magic swf");
- puts("Version 1.3");
+ puts("Version 1.4");
  puts("Simple tool for converting Adobe flash movie to self-played movie");
  puts("This sofware made by Popov Evgeniy Alekseyevich,2011-2019 years");
  puts("This software distributed under GNU GENERAL PUBLIC LICENSE");
@@ -99,16 +100,22 @@ void data_dump(FILE *input,FILE *output,const size_t length)
 {
  unsigned char data;
  size_t index;
+ data=0;
+ for (index=0;index<length;++index)
+ {
+  fread(&data,sizeof(unsigned char),1,input);
+  fwrite(&data,sizeof(unsigned char),1,input);
+ }
+
+}
+
+void fast_data_dump(FILE *input,FILE *output,const size_t length)
+{
  unsigned char *buffer=NULL;
  buffer=(unsigned char*)calloc(length,sizeof(unsigned char));
  if (buffer==NULL)
  {
-  for(index=0;index<length;++index)
-  {
-   fread(&data,sizeof(unsigned char),1,input);
-   fwrite(&data,sizeof(unsigned char),1,input);
-  }
-
+  data_dump(input,output,length);
  }
  else
  {
@@ -183,7 +190,7 @@ unsigned long int copy_file(FILE *input,FILE *output)
 {
  unsigned long int length;
  length=get_file_size(input);
- data_dump(input,output,(size_t)length);
+ fast_data_dump(input,output,(size_t)length);
  return length;
 }
 
