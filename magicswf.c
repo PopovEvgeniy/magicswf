@@ -45,9 +45,9 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("Magic swf. Version 1.4.1");
+ puts("Magic swf. Version 1.4.2");
  puts("Simple tool for converting Adobe flash movie to self-played movie");
- puts("This sofware made by Popov Evgeniy Alekseyevich,2011-2019 years");
+ puts("This sofware made by Popov Evgeniy Alekseyevich,2011-2020 years");
  puts("This software distributed under GNU GENERAL PUBLIC LICENSE");
 }
 
@@ -103,7 +103,7 @@ void data_dump(FILE *input,FILE *output,const size_t length)
  for (index=0;index<length;++index)
  {
   fread(&data,sizeof(unsigned char),1,input);
-  fwrite(&data,sizeof(unsigned char),1,input);
+  fwrite(&data,sizeof(unsigned char),1,output);
  }
 
 }
