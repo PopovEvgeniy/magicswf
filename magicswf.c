@@ -21,7 +21,7 @@ char* get_name(const char *name,const char *ext);
 
 unsigned long int copy_file(FILE *input,FILE *output);
 void check_executable(FILE *input);
-void check_signature(FILE *input,FILE *output,const char *name);
+void check_signature(FILE *input);
 void write_service_information(FILE *output,const unsigned long int length);
 void compile_flash(const char *player,const char *flash,const char *result);
 void work(const char *player,const char *flash);
@@ -45,9 +45,9 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("Magic swf. Version 1.4.2");
+ puts("Magic swf. Version 1.4.3");
  puts("Simple tool for converting Adobe flash movie to self-played movie");
- puts("This sofware made by Popov Evgeniy Alekseyevich,2011-2020 years");
+ puts("This sofware made by Popov Evgeniy Alekseyevich,2011-2022 years");
  puts("This software distributed under GNU GENERAL PUBLIC LICENSE");
 }
 
@@ -205,7 +205,7 @@ void check_executable(FILE *input)
 
 }
 
-void check_signature(FILE *input,FILE *output,const char *name)
+void check_signature(FILE *input)
 {
  char signature[3];
  fread(signature,sizeof(char),3,input);
@@ -214,9 +214,6 @@ void check_signature(FILE *input,FILE *output,const char *name)
   if (strncmp(signature,"CWS",3)!=0)
   {
    puts("Flash movie was corrupted");
-   fclose(input);
-   fclose(output);
-   remove(name);
    exit(5);
   }
 
@@ -235,18 +232,19 @@ void write_service_information(FILE *output,const unsigned long int length)
 void compile_flash(const char *player,const char *flash,const char *result)
 {
  unsigned long int length;
- FILE *input;
+ FILE *projector;
+ FILE *swf;
  FILE *output;
- input=open_input_file(player);
- check_executable(input);
+ projector=open_input_file(player);
+ swf=open_input_file(flash);
+ check_executable(projector);
+ check_signature(swf);
  output=create_output_file(result);
- copy_file(input,output);
- fclose(input);
- input=open_input_file(flash);
- check_signature(input,output,result);
- length=copy_file(input,output);
- fclose(input);
+ copy_file(projector,output);
+ length=copy_file(swf,output);
  write_service_information(output,length);
+ fclose(projector);
+ fclose(swf);
  fclose(output);
 }
 

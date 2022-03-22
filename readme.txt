@@ -3,7 +3,7 @@
        Simple tool for converting Adobe flash movie to self-played movie
                 This software made by Popov Evgeniy Alekseyevich
 
-                               Version 1.4.2
+                               Version 1.4.3
 
 System requirement
 
@@ -51,3 +51,4 @@ Version history
 1.1.1 - Source code was recompiled under Open Watcom.
 1.2 - 1.4.1 - Small changes.
 1.4.2 - Small bug was fixed.
+1.4.3 - Small changes.
