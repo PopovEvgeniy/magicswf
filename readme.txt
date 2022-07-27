@@ -3,7 +3,7 @@
        Simple tool for converting Adobe flash movie to self-played movie
                 This software made by Popov Evgeniy Alekseyevich
 
-                               Version 1.4.3
+                               Version 1.4.3.1
 
 System requirement
 
@@ -17,7 +17,7 @@ This program takes a file name of Flash Player Projector and Flash movie file na
 
 Additional software
 
-You need Flash Player Projector. You can take it here: http://www.adobe.com/support/flashplayer/downloads.html
+You need Flash Player Projector. You can take it here: https://archive.org/details/adobe-flash-player-projector
 
 Exit codes
 
@@ -25,8 +25,8 @@ Exit codes
 1 - Can't open input file.
 2 - Can't create output file.
 3 - Can't allocate memory.
-4 - Executable file of Flash Player Projector was corrupted.
-5 - Flash movie was corrupted.
+4 - Executable file of Flash Player Projector was corrupt.
+5 - Flash movie was corrupt.
 
 License
 
@@ -44,11 +44,12 @@ You can send me a letter to tuzik87@inbox.ru.
 Version history
 
 0.1 — 0.8 - Unstable branch.
-0.9 - Project name was changed. Stable branch.
+0.9 - Project name changed. Stable branch.
 0.9.1 - 0.9.8 - Small changes.
-0.9.9 - Small bug was fixed.
+0.9.9 - Small bug fixed.
 1.0 - 1.1 - Small changes.
-1.1.1 - Source code was recompiled under Open Watcom.
+1.1.1 - Source code recompiled under Open Watcom.
 1.2 - 1.4.1 - Small changes.
-1.4.2 - Small bug was fixed.
+1.4.2 - Small bug fixed.
 1.4.3 - Small changes.
+1.4.3.1 - Documentation updated.
