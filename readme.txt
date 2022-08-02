@@ -3,7 +3,7 @@
        Simple tool for converting Adobe flash movie to self-played movie
                 This software made by Popov Evgeniy Alekseyevich
 
-                               Version 1.4.3.1
+                               Version 1.4.3.2
 
 System requirement
 
@@ -21,7 +21,7 @@ You need Flash Player Projector. You can take it here: https://archive.org/detai
 
 Exit codes
 
-0 - Operation was successfully complete.
+0 - Operation successfully complete.
 1 - Can't open input file.
 2 - Can't create output file.
 3 - Can't allocate memory.
@@ -34,7 +34,7 @@ This program distributed under GNU GENERAL PUBLIC LICENSE.
 
 Source code
 
-The program source code was compiled under Open Watcom.
+The program source code compiled under Open Watcom.
 But you can do it under any modern C compiler.
 
 Contact
@@ -52,4 +52,4 @@ Version history
 1.2 - 1.4.1 - Small changes.
 1.4.2 - Small bug fixed.
 1.4.3 - Small changes.
-1.4.3.1 - Documentation updated.
+1.4.3.1 - 1.4.3.2 - Documentation updated.
