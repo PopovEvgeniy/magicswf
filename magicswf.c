@@ -4,21 +4,16 @@
 #include <string.h>
 
 void show_intro();
-void show_help();
-void show_start_message();
-void show_end_message();
-
+void show_message(const char *message);
 FILE *open_input_file(const char *name);
 FILE *create_output_file(const char *name);
 void fast_data_dump(FILE *input,FILE *output,const size_t length);
 void data_dump(FILE *input,FILE *output,const size_t length);
 unsigned long int get_file_size(FILE *file);
-
 char *get_string_memory(const size_t length);
 size_t get_extension_position(const char *source);
 char *get_short_name(const char *name);
 char* get_name(const char *name,const char *ext);
-
 unsigned long int copy_file(FILE *input,FILE *output);
 void check_executable(FILE *input);
 void check_signature(FILE *input);
@@ -31,13 +26,13 @@ int main(int argc, char *argv[])
  show_intro();
  if(argc==3)
  {
-  show_start_message();
+  show_message("Working... Please wait");
   work(argv[1],argv[2]);
-  show_end_message();
+  show_message("Work finish");
  }
  else
  {
-  show_help();
+  show_message("You must give file name of Flash Player Projector and Flash movie file name as command line argument!");
  }
  return 0;
 }
@@ -45,28 +40,16 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("Magic swf. Version 1.4.3");
+ puts("Magic swf. Version 1.4.4");
  puts("Simple tool for converting Adobe flash movie to self-played movie");
  puts("This sofware made by Popov Evgeniy Alekseyevich,2011-2022 years");
  puts("This software distributed under GNU GENERAL PUBLIC LICENSE");
 }
 
-void show_help()
+void show_message(const char *message)
 {
  putchar('\n');
- puts("You must give file name of Flash Player Projector and Flash movie file name as command line argument!");
-}
-
-void show_start_message()
-{
- putchar('\n');
- puts("Working... Please wait");
-}
-
-void show_end_message()
-{
- putchar('\n');
- puts("Work finish");
+ puts(message);
 }
 
 FILE *open_input_file(const char *name)
@@ -199,7 +182,7 @@ void check_executable(FILE *input)
  fread(signature,sizeof(char),2,input);
  if (strncmp(signature,"MZ",2)!=0)
  {
-  puts("Executable file of Flash Player Projector was corrupted");
+  puts("Executable file of Flash Player Projector corrupted");
   exit(4);
  }
 
@@ -213,7 +196,7 @@ void check_signature(FILE *input)
  {
   if (strncmp(signature,"CWS",3)!=0)
   {
-   puts("Flash movie was corrupted");
+   puts("Flash movie corrupted");
    exit(5);
   }
 

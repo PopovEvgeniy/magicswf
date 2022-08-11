@@ -3,7 +3,7 @@
        Simple tool for converting Adobe flash movie to self-played movie
                 This software made by Popov Evgeniy Alekseyevich
 
-                               Version 1.4.3.4
+                               Version 1.4.4
 
 System requirement
 
@@ -25,8 +25,8 @@ Exit codes
 1 - Can't open input file.
 2 - Can't create output file.
 3 - Can't allocate memory.
-4 - Executable file of Flash Player Projector was corrupt.
-5 - Flash movie was corrupt.
+4 - Executable file of Flash Player Projector corrupted.
+5 - Flash movie corrupted.
 
 License
 
@@ -53,3 +53,4 @@ Version history
 1.4.2 - Small bug fixed.
 1.4.3 - Small changes.
 1.4.3.1 - 1.4.3.4 - Documentation updated.
+1.4.4 - Small changes.
