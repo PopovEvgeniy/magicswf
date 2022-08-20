@@ -3,7 +3,7 @@
        Simple tool for converting Adobe flash movie to self-played movie
                 This software made by Popov Evgeniy Alekseyevich
 
-                               Version 1.4.4
+                               Version 1.4.5
 
 System requirement
 
@@ -12,7 +12,7 @@ System requirement
 Description and usage
 
 This program let you convert an Adobe flash movie to a stand-alone self-played movie.
-Self-played movie is an executable file: it combines the built-in player and the Flash movie in one file.
+Self-played movie is an executable file: it combines the built-in player and Flash movie in one file.
 This program takes a file name of Flash Player Projector and Flash movie file name as command line arguments.
 
 Additional software
@@ -53,4 +53,4 @@ Version history
 1.4.2 - Small bug fixed.
 1.4.3 - Small changes.
 1.4.3.1 - 1.4.3.4 - Documentation updated.
-1.4.4 - Small changes.
+1.4.4 - 1.4.5 - Small changes.

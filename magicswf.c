@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("Magic swf. Version 1.4.4");
+ puts("Magic swf. Version 1.4.5");
  puts("Simple tool for converting Adobe flash movie to self-played movie");
  puts("This sofware made by Popov Evgeniy Alekseyevich,2011-2022 years");
  puts("This software distributed under GNU GENERAL PUBLIC LICENSE");
@@ -58,8 +58,7 @@ FILE *open_input_file(const char *name)
  target=fopen(name,"rb");
  if (target==NULL)
  {
-  putchar('\n');
-  puts("Can't open input file");
+  show_message("Can't open input file");
   exit(1);
  }
  return target;
@@ -71,8 +70,7 @@ FILE *create_output_file(const char *name)
  target=fopen(name,"wb");
  if (target==NULL)
  {
-  putchar('\n');
-  puts("Can't create ouput file");
+  show_message("Can't create ouput file");
   exit(2);
  }
  return target;
@@ -123,8 +121,7 @@ char *get_string_memory(const size_t length)
  memory=(char*)calloc(length+1,sizeof(char));
  if(memory==NULL)
  {
-  putchar('\n');
-  puts("Can't allocate memory");
+  show_message("Can't allocate memory");
   exit(3);
  }
  return memory;
@@ -182,7 +179,7 @@ void check_executable(FILE *input)
  fread(signature,sizeof(char),2,input);
  if (strncmp(signature,"MZ",2)!=0)
  {
-  puts("Executable file of Flash Player Projector corrupted");
+  show_message("Executable file of Flash Player Projector corrupted");
   exit(4);
  }
 
@@ -196,7 +193,7 @@ void check_signature(FILE *input)
  {
   if (strncmp(signature,"CWS",3)!=0)
   {
-   puts("Flash movie corrupted");
+   show_message("Flash movie corrupted");
    exit(5);
   }
 
