@@ -3,11 +3,11 @@
        A simple tool for converting Adobe flash movie to self-played movie
                 This software made by Popov Evgeniy Alekseyevich
 
-                               Version 1.4.7
+                               Version 1.4.9
 
 System requirement
 
-48 kilobytes free space on storage media.
+60 kilobytes free space on storage media.
 
 Description and usage
 
@@ -53,4 +53,5 @@ Version history
 1.4.2 - Small bug fixed.
 1.4.3 - Small changes.
 1.4.3.1 - 1.4.3.4 - Documentation updated.
-1.4.4 - 1.4.7 - Small changes.
+1.4.4 - 1.4.8 - Small changes.
+1.4.9 - Visual C++ support improved.
