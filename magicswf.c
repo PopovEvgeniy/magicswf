@@ -24,11 +24,11 @@ int main(int argc, char *argv[])
  {
   puts("Working... Please wait");
   work(argv[1],argv[2]);
-  puts("Work finish");
+  puts("The work has been finished");
  }
  else
  {
-  puts("You must give file name of Flash Player Projector and Flash movie file name as command line argument!");
+  puts("You must give the Flash Player Projector file name and the Flash movie file name as the command-line arguments!");
  }
  return 0;
 }
@@ -36,10 +36,10 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("Magic swf. Version 1.4.9");
- puts("A simple tool for converting Adobe flash movie to self-played movie");
- puts("This sofware made by Popov Evgeniy Alekseyevich,2011-2024 years");
- puts("This software distributed under GNU GENERAL PUBLIC LICENSE");
+ puts("Magic swf. Version 1.5");
+ puts("A simple tool for converting an Adobe Flash movies to a self-played movies");
+ puts("This sofware was made by Popov Evgeniy Alekseyevich,2011-2024 years");
+ puts("This software is distributed under GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
 }
 
@@ -49,7 +49,7 @@ FILE *open_input_file(const char *name)
  target=fopen(name,"rb");
  if (target==NULL)
  {
-  puts("Can't open input file");
+  puts("Can't open the input file");
   exit(1);
  }
  return target;
@@ -61,7 +61,7 @@ FILE *create_output_file(const char *name)
  target=fopen(name,"wb");
  if (target==NULL)
  {
-  puts("Can't create ouput file");
+  puts("Can't create the ouput file");
   exit(2);
  }
  return target;
@@ -170,7 +170,7 @@ void check_executable(FILE *input)
  fread(signature,sizeof(char),2,input);
  if (strncmp(signature,"MZ",2)!=0)
  {
-  puts("Executable file of Flash Player Projector corrupted");
+  puts("The executable file of the Flash Player Projector was corrupted");
   exit(4);
  }
 
@@ -184,7 +184,7 @@ void check_signature(FILE *input)
  {
   if (strncmp(signature,"CWS",3)!=0)
   {
-   puts("Flash movie corrupted");
+   puts("The Flash movie was corrupted");
    exit(5);
   }
 
