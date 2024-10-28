@@ -3,7 +3,7 @@
        A simple tool for converting Adobe Flash movies to standalone movies
                 This software was made by Popov Evgeniy Alekseyevich
 
-                               Version 1.5.0.1
+                               Version 1.5.0.2
 
 System requirements
 
@@ -26,7 +26,7 @@ Exit codes
 2: Can't create the output file.
 3: Can't allocate memory.
 4: The executable file of the Flash Player Projector was corrupted.
-5: he Flash movie was corrupted.
+5: The Flash movie was corrupted.
 
 License
 
@@ -34,8 +34,8 @@ This program is distributed under GNU GENERAL PUBLIC LICENSE.
 
 Source code
 
-The source code is compiled under Open Watcom.
-But you can do it under any modern C compiler.
+The source code was compiled under Open Watcom.
+But you can do it with any modern C compiler.
 
 Contact
 
@@ -44,17 +44,17 @@ You can send me a letter at tuzik87@inbox.ru.
 Version history
 
 0.1-0.8: The unstable branch.
-0.9: The project name changed. The stable branch.
+0.9: The project name has changed. The stable branch.
 0.9.1-0.9.8: The small changes.
-0.9.9: A small bug is fixed.
+0.9.9: A small bug has been fixed.
 1.0-1.1: The small changes.
 1.1.1: The source code was recompiled under Open Watcom.
 1.2-1.4.1: The small changes.
-1.4.2: A small bug is fixed.
+1.4.2: A small bug has been fixed.
 1.4.3: The small changes.
-1.4.3.1-1.4.3.4: Documentation updated.
+1.4.3.1-1.4.3.4: The documentation has been updated.
 1.4.4-1.4.8: The small changes.
-1.4.9: Visual C++ support improved.
-1.4.9.1: Documentation updated.
+1.4.9: Visual C++ support has improved.
+1.4.9.1: The documentation has been updated.
 1.5: The small changes.
-1.5.0.1: Documentation updated.
+1.5.0.1-1.5.0.2: The documentation has been updated.
