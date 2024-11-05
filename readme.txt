@@ -3,11 +3,11 @@
        A simple tool for converting Adobe Flash movies to standalone movies
                 This software was made by Popov Evgeniy Alekseyevich
 
-                               Version 1.5.0.2
+                               Version 1.5.1
 
 System requirements
 
-60 kilobytes of free space on storage media.
+36 kilobytes of free space on storage media.
 
 Description and usage
 
@@ -34,7 +34,7 @@ This program is distributed under GNU GENERAL PUBLIC LICENSE.
 
 Source code
 
-The source code was compiled under Open Watcom.
+The source code was compiled under Tiny C Compiler.
 But you can do it with any modern C compiler.
 
 Contact
@@ -58,3 +58,4 @@ Version history
 1.4.9.1: The documentation has been updated.
 1.5: The small changes.
 1.5.0.1-1.5.0.2: The documentation has been updated.
+1.5.1: The source code was recompiled under Tiny C Compiler.
