@@ -36,9 +36,9 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("Magic swf. Version 1.5.1");
+ puts("Magic swf. Version 1.5.2");
  puts("A simple tool for converting an Adobe Flash movies to a self-played movies");
- puts("This sofware was made by Popov Evgeniy Alekseyevich,2011-2024 years");
+ puts("This sofware was made by Popov Evgeniy Alekseyevich,2011-2025 years");
  puts("This software is distributed under GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
 }
@@ -151,9 +151,9 @@ char* get_name(const char *name,const char *ext)
   output=get_short_name(name);
   length=strlen(output)+strlen(ext);
   result=get_string_memory(length);
-  strcpy(result,output);
+  sprintf(result,"%s%s",output,ext);
   free(output);
-  return strcat(result,ext);
+  return result;
 }
 
 unsigned long int copy_file(FILE *input,FILE *output)

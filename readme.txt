@@ -1,9 +1,9 @@
                                  Magic Swf
 
-       A simple tool for converting Adobe Flash movies to standalone movies
+       A simple tool for converting an Adobe Flash movies to a standalone movies
                 This software was made by Popov Evgeniy Alekseyevich
 
-                               Version 1.5.1
+                               Version 1.5.2
 
 System requirements
 
@@ -17,7 +17,7 @@ This program takes the file name of the Flash Player Projector and the Flash mov
 
 Additional software
 
-You need a Flash Player Projector. You can take it here: https://archive.org/details/flashplayer_32_sa_202107
+You need a Flash Player Projector. You can take it here: https://archive.org/details/flashplayer_standalone_projectors
 
 Exit codes
 
@@ -59,3 +59,4 @@ Version history
 1.5: The small changes.
 1.5.0.1-1.5.0.2: The documentation has been updated.
 1.5.1: The source code was recompiled under Tiny C Compiler.
+1.5.2: The small changes.
