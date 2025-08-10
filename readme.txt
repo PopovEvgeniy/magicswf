@@ -1,9 +1,9 @@
                                  Magic Swf
 
-       A simple tool for converting an Adobe Flash movies to a standalone movies
+       A simple tool for converting an Adobe Flash movie to a standalone movie
                 This software was made by Popov Evgeniy Alekseyevich
 
-                               Version 1.5.2
+                               Version 1.5.2.1
 
 System requirements
 
@@ -13,7 +13,7 @@ Description and usage
 
 This program lets you convert an Adobe Flash movie to a standalone movie.
 A standalone movie is an executable file. It combines the built-in player and Flash movie in one file.
-This program takes the file name of the Flash Player Projector and the Flash movie file name as command-line arguments.
+This program takes the file name of the Flash Player Projector and the Flash movie file name as the command-line arguments.
 
 Additional software
 
@@ -30,16 +30,12 @@ Exit codes
 
 License
 
-This program is distributed under GNU GENERAL PUBLIC LICENSE.
+This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 
 Source code
 
 The source code was compiled under Tiny C Compiler.
 But you can do it with any modern C compiler.
-
-Contact
-
-You can send me a letter at tuzik87@inbox.ru.
 
 Version history
 
@@ -60,3 +56,4 @@ Version history
 1.5.0.1-1.5.0.2: The documentation has been updated.
 1.5.1: The source code was recompiled under Tiny C Compiler.
 1.5.2: The small changes.
+1.5.2.1: The documentation has been updated.
