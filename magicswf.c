@@ -36,10 +36,10 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("Magic swf. Version 1.5.2");
+ puts("Magic swf. Version 1.5.3");
  puts("A simple tool for converting an Adobe Flash movies to a self-played movies");
  puts("This sofware was made by Popov Evgeniy Alekseyevich,2011-2025 years");
- puts("This software is distributed under GNU GENERAL PUBLIC LICENSE");
+ puts("This software is distributed under the GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
 }
 

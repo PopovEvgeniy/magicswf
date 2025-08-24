@@ -3,11 +3,11 @@
        A simple tool for converting an Adobe Flash movie to a standalone movie
                 This software was made by Popov Evgeniy Alekseyevich
 
-                               Version 1.5.2.1
+                               Version 1.5.3
 
 System requirements
 
-36 kilobytes of free space on storage media.
+68 kilobytes of free space on storage media.
 
 Description and usage
 
@@ -21,7 +21,7 @@ You need a Flash Player Projector. You can take it here: https://archive.org/det
 
 Exit codes
 
-0: Operation was successfully completed.
+0: The operation was successfully completed.
 1: Can't open the input file.
 2: Can't create the output file.
 3: Can't allocate memory.
@@ -34,7 +34,7 @@ This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 
 Source code
 
-The source code was compiled under Tiny C Compiler.
+The source code was compiled under Open Watcom.
 But you can do it with any modern C compiler.
 
 Version history
@@ -57,3 +57,4 @@ Version history
 1.5.1: The source code was recompiled under Tiny C Compiler.
 1.5.2: The small changes.
 1.5.2.1: The documentation has been updated.
+1.5.3: The small changes.
