@@ -3,23 +3,19 @@
        A simple tool for converting an Adobe Flash movie to a standalone movie
                 This software was made by Popov Evgeniy Alekseyevich
 
-                               Version 1.5.3
+                               Version 1.5.3.1
 
-System requirements
-
-68 kilobytes of free space on storage media.
-
-Description and usage
+The program description.
 
 This program lets you convert an Adobe Flash movie to a standalone movie.
-A standalone movie is an executable file. It combines the built-in player and Flash movie in one file.
+A standalone movie is an executable file. It combines the built-in player and a Flash movie in one file.
 This program takes the file name of the Flash Player Projector and the Flash movie file name as the command-line arguments.
 
-Additional software
+The additional software.
 
-You need a Flash Player Projector. You can take it here: https://archive.org/details/flashplayer_standalone_projectors
+You need a Flash Player projector. You can take it here: https://archive.org/details/flashplayer_standalone_projectors
 
-Exit codes
+Exit codes.
 
 0: The operation was successfully completed.
 1: Can't open the input file.
@@ -28,16 +24,16 @@ Exit codes
 4: The executable file of the Flash Player Projector was corrupted.
 5: The Flash movie was corrupted.
 
-License
+License.
 
 This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 
-Source code
+The source code.
 
 The source code was compiled under Open Watcom.
 But you can do it with any modern C compiler.
 
-Version history
+Version history.
 
 0.1-0.8: The unstable branch.
 0.9: The project name has changed. The stable branch.
@@ -58,3 +54,4 @@ Version history
 1.5.2: The small changes.
 1.5.2.1: The documentation has been updated.
 1.5.3: The small changes.
+1.5.3.1: The documentation has been updated.
