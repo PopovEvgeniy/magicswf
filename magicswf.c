@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("Magic swf. Version 1.5.4");
+ puts("Magic swf. Version 1.5.5");
  puts("A simple tool for converting an Adobe Flash movie to a self-played movie");
  puts("This sofware was made by Popov Evgeniy Alekseyevich,2011-2025 years");
  puts("This software is distributed under the GNU GENERAL PUBLIC LICENSE");
@@ -104,7 +104,7 @@ void data_dump(FILE *input,FILE *output,const size_t length)
 void fast_data_dump(FILE *input,FILE *output,const size_t length)
 {
  char *buffer;
- buffer=get_memory(length);
+ buffer=(char*)malloc(length);
  if (buffer==NULL)
  {
   data_dump(input,output,length);
