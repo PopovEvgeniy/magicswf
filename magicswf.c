@@ -4,15 +4,15 @@ void show_intro();
 FILE *open_input_file(const char *name);
 FILE *create_output_file(const char *name);
 char *get_memory(const size_t length);
+void check_executable(FILE *input);
+void check_signature(FILE *input);
 void fast_data_dump(FILE *input,FILE *output,const size_t length);
 void data_dump(FILE *input,FILE *output,const size_t length);
-unsigned long int get_file_size(FILE *file);
+unsigned long int get_file_size(FILE *target);
 size_t get_extension_position(const char *source);
 char *get_short_name(const char *name);
 char *get_name(const char *name,const char *ext);
 unsigned long int copy_file(FILE *input,FILE *output);
-void check_executable(FILE *input);
-void check_signature(FILE *input);
 void write_service_information(FILE *output,const unsigned long int length);
 void compile_flash(const char *player,const char *flash,const char *result);
 void work(const char *player,const char *flash);
@@ -36,9 +36,9 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("Magic swf. Version 1.5.6");
+ puts("Magic swf. Version 1.5.7");
  puts("A simple tool for converting an Adobe Flash movie to a self-played movie");
- puts("This sofware was made by Popov Evgeniy Alekseyevich,2011-2025 years");
+ puts("This sofware was made by Popov Evgeniy Alekseyevich,2011-2026 years");
  puts("This software is distributed under the GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
 }
@@ -79,6 +79,34 @@ char *get_memory(const size_t length)
  return memory;
 }
 
+void check_executable(FILE *input)
+{
+ char signature[2];
+ fread(signature,sizeof(char),2,input);
+ if (strncmp(signature,"MZ",2)!=0)
+ {
+  puts("The executable file of the Flash Player projector was corrupted");
+  exit(4);
+ }
+
+}
+
+void check_signature(FILE *input)
+{
+ char signature[3];
+ fread(signature,sizeof(char),3,input);
+ if (strncmp(signature,"FWS",3)!=0)
+ {
+  if (strncmp(signature,"CWS",3)!=0)
+  {
+   puts("The Flash movie was corrupted");
+   exit(5);
+  }
+
+ }
+
+}
+
 void data_dump(FILE *input,FILE *output,const size_t length)
 {
  char *buffer;
@@ -116,28 +144,29 @@ void fast_data_dump(FILE *input,FILE *output,const size_t length)
 
 }
 
-unsigned long int get_file_size(FILE *file)
+unsigned long int get_file_size(FILE *target)
 {
  unsigned long int length;
- fseek(file,0,SEEK_END);
- length=ftell(file);
- rewind(file);
+ fseek(target,0,SEEK_END);
+ length=ftell(target);
+ rewind(target);
  return length;
 }
 
 size_t get_extension_position(const char *source)
 {
- size_t index;
- for(index=strlen(source);index>0;--index)
+ size_t index,position;
+ position=strlen(source);
+ for(index=position;index>0;--index)
  {
   if(source[index]=='.')
   {
+   position=index;
    break;
   }
 
  }
- if (index==0) index=strlen(source);
- return index;
+ return position;
 }
 
 char *get_short_name(const char *name)
@@ -168,34 +197,6 @@ unsigned long int copy_file(FILE *input,FILE *output)
  length=get_file_size(input);
  fast_data_dump(input,output,(size_t)length);
  return length;
-}
-
-void check_executable(FILE *input)
-{
- char signature[2];
- fread(signature,sizeof(char),2,input);
- if (strncmp(signature,"MZ",2)!=0)
- {
-  puts("The executable file of the Flash Player projector was corrupted");
-  exit(4);
- }
-
-}
-
-void check_signature(FILE *input)
-{
- char signature[3];
- fread(signature,sizeof(char),3,input);
- if (strncmp(signature,"FWS",3)!=0)
- {
-  if (strncmp(signature,"CWS",3)!=0)
-  {
-   puts("The Flash movie was corrupted");
-   exit(5);
-  }
-
- }
-
 }
 
 void write_service_information(FILE *output,const unsigned long int length)
