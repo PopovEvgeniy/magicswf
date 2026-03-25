@@ -20,15 +20,15 @@ void work(const char *player,const char *flash);
 int main(int argc, char *argv[])
 {
  show_intro();
- if(argc==3)
+ if(argc<3)
+ {
+  puts("You must give the Flash Player Projector file name and the Flash movie file name as the command-line arguments!");
+ }
+ else
  {
   puts("Working... Please wait");
   work(argv[1],argv[2]);
   puts("The work has been finished");
- }
- else
- {
-  puts("You must give the Flash Player Projector file name and the Flash movie file name as the command-line arguments!");
  }
  return 0;
 }
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("Magic swf. Version 1.5.7");
+ puts("Magic swf. Version 1.5.8");
  puts("A simple tool for converting an Adobe Flash movie to a self-played movie");
  puts("This sofware was made by Popov Evgeniy Alekseyevich,2011-2026 years");
  puts("This software is distributed under the GNU GENERAL PUBLIC LICENSE");
@@ -123,6 +123,7 @@ void data_dump(FILE *input,FILE *output,const size_t length)
   }
   fread(buffer,sizeof(char),block,input);
   fwrite(buffer,sizeof(char),block,output);
+  fflush(output);
  }
  free(buffer);
 }
@@ -139,6 +140,7 @@ void fast_data_dump(FILE *input,FILE *output,const size_t length)
  {
   fread(buffer,sizeof(char),length,input);
   fwrite(buffer,sizeof(char),length,output);
+  fflush(output);
   free(buffer);
  }
 
