@@ -1,4 +1,5 @@
 #include "magicswf.h"
+#include "format.h"
 
 void show_intro();
 FILE *open_input_file(const char *name);
@@ -36,8 +37,8 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("Magic swf. Version 1.5.8");
- puts("A simple tool for converting an Adobe Flash movie to a self-played movie");
+ puts("Magic swf. Version 1.6");
+ puts("A simple tool for converting an Adobe Flash movie to a standalone movie");
  puts("This sofware was made by Popov Evgeniy Alekseyevich,2011-2026 years");
  puts("This software is distributed under the GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
@@ -203,10 +204,13 @@ unsigned long int copy_file(FILE *input,FILE *output)
 
 void write_service_information(FILE *output,const unsigned long int length)
 {
- unsigned long int flag;
- flag=0xFA123456;
- fwrite(&flag,sizeof(unsigned long int),1,output);
- fwrite(&length,sizeof(unsigned long int),1,output);
+ service_information information;
+ information.signature[0]='V';
+ information.signature[1]='4';
+ information.signature[2]=18;
+ information.signature[3]=250;
+ information.length=length;
+ fwrite(&information,sizeof(service_information),1,output);
 }
 
 void compile_flash(const char *player,const char *flash,const char *result)
