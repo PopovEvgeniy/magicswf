@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("Magic swf. Version 1.6");
+ puts("Magic swf. Version 1.6.1");
  puts("A simple tool for converting an Adobe Flash movie to a standalone movie");
  puts("This sofware was made by Popov Evgeniy Alekseyevich,2011-2026 years");
  puts("This software is distributed under the GNU GENERAL PUBLIC LICENSE");
@@ -124,7 +124,6 @@ void data_dump(FILE *input,FILE *output,const size_t length)
   }
   fread(buffer,sizeof(char),block,input);
   fwrite(buffer,sizeof(char),block,output);
-  fflush(output);
  }
  free(buffer);
 }
@@ -141,7 +140,6 @@ void fast_data_dump(FILE *input,FILE *output,const size_t length)
  {
   fread(buffer,sizeof(char),length,input);
   fwrite(buffer,sizeof(char),length,output);
-  fflush(output);
   free(buffer);
  }
 
@@ -208,7 +206,7 @@ void write_service_information(FILE *output,const unsigned long int length)
  information.signature[0]='V';
  information.signature[1]='4';
  information.signature[2]=18;
- information.signature[3]=250;
+ information.signature[3]=-6;
  information.length=length;
  fwrite(&information,sizeof(service_information),1,output);
 }

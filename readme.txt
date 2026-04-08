@@ -3,7 +3,7 @@
        A simple tool for converting an Adobe Flash movie to a standalone movie
                 This software was made by Popov Evgeniy Alekseyevich
 
-                               Version 1.6
+                               Version 1.6.1
 
 The program description.
 
@@ -56,4 +56,4 @@ Version history.
 1.5.3: The small changes.
 1.5.3.1: The documentation has been updated.
 1.5.4: The compilation process has improved.
-1.5.5-1.6: The small changes.
+1.5.5-1.6.1: The small changes.
