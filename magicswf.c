@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("Magic swf. Version 1.6.1");
+ puts("Magic swf. Version 1.6.2");
  puts("A simple tool for converting an Adobe Flash movie to a standalone movie");
  puts("This sofware was made by Popov Evgeniy Alekseyevich,2011-2026 years");
  puts("This software is distributed under the GNU GENERAL PUBLIC LICENSE");
