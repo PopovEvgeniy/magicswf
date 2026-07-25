@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("Magic swf. Version 1.6.5");
+ puts("Magic swf. Version 1.6.6");
  puts("A simple tool for converting an Adobe Flash movie to a standalone movie");
  puts("This sofware was made by Popov Evgeniy Alekseyevich,2011-2026 years");
  puts("This software is distributed under the GNU GENERAL PUBLIC LICENSE");
@@ -144,10 +144,10 @@ void check_signature(FILE *input)
 
 void data_dump(FILE *input,FILE *output,const size_t length)
 {
- char *buffer;
- size_t current,elapsed,block;
- elapsed=0;
- block=4096;
+ char *buffer=NULL;
+ size_t current=0;
+ size_t elapsed=0;
+ size_t block=4096;
  buffer=get_memory(block);
  for (current=0;current<length;current+=block)
  {
@@ -164,7 +164,7 @@ void data_dump(FILE *input,FILE *output,const size_t length)
 
 void fast_data_dump(FILE *input,FILE *output,const size_t length)
 {
- char *buffer;
+ char *buffer=NULL;
  buffer=(char*)malloc(length);
  if (buffer==NULL)
  {
@@ -181,7 +181,7 @@ void fast_data_dump(FILE *input,FILE *output,const size_t length)
 
 unsigned long int get_file_size(FILE *target)
 {
- unsigned long int length;
+ unsigned long int length=0;
  fseek(target,0,SEEK_END);
  length=ftell(target);
  rewind(target);
@@ -225,7 +225,7 @@ size_t get_name_without_extension_length(const char *source)
 char *get_name_without_extension(const char *name)
 {
  char *result=NULL;
- size_t length;
+ size_t length=0;
  length=get_name_without_extension_length(name);
  if (length>0)
  {
@@ -262,7 +262,7 @@ char *get_name(const char *name,const char *extension)
 
 unsigned long int copy_file(FILE *input,FILE *output)
 {
- unsigned long int length;
+ unsigned long int length=0;
  length=get_file_size(input);
  fast_data_dump(input,output,(size_t)length);
  return length;
