@@ -9,9 +9,9 @@ void write_data(const void *data,const size_t length,FILE *output);
 char *get_memory(const size_t length);
 void check_executable(FILE *input);
 void check_signature(FILE *input);
+unsigned long int get_file_size(FILE *target);
 void fast_data_dump(FILE *input,FILE *output,const size_t length);
 void data_dump(FILE *input,FILE *output,const size_t length);
-unsigned long int get_file_size(FILE *target);
 size_t get_name_without_extension_length(const char *source);
 char *get_name_without_extension(const char *name);
 char *get_name(const char *name,const char *extension);
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("Magic swf. Version 1.6.6");
+ puts("Magic swf. Version 1.6.7");
  puts("A simple tool for converting an Adobe Flash movie to a standalone movie");
  puts("This sofware was made by Popov Evgeniy Alekseyevich,2011-2026 years");
  puts("This software is distributed under the GNU GENERAL PUBLIC LICENSE");
@@ -82,7 +82,7 @@ FILE *create_output_file(const char *name)
 
 void read_data(void *data,const size_t length,FILE *input)
 {
- fread(data,length,sizeof(char),input);
+ fread(data,sizeof(char),length,input);
  if (ferror(input)!=0)
  {
   puts("Can't read data!");
@@ -93,7 +93,7 @@ void read_data(void *data,const size_t length,FILE *input)
 
 void write_data(const void *data,const size_t length,FILE *output)
 {
- fwrite(data,length,sizeof(char),output);
+ fwrite(data,sizeof(char),length,output);
  if (ferror(output)!=0)
  {
   puts("Can't write data!");
@@ -142,6 +142,19 @@ void check_signature(FILE *input)
 
 }
 
+unsigned long int get_file_size(FILE *target)
+{
+ unsigned long int length=0;
+ if (fseek(target,0,SEEK_END)!=0)
+ {
+  puts("Can't get the file size!");
+  exit(8);
+ }
+ length=ftell(target);
+ rewind(target);
+ return length;
+}
+
 void data_dump(FILE *input,FILE *output,const size_t length)
 {
  char *buffer=NULL;
@@ -177,15 +190,6 @@ void fast_data_dump(FILE *input,FILE *output,const size_t length)
   free(buffer);
  }
 
-}
-
-unsigned long int get_file_size(FILE *target)
-{
- unsigned long int length=0;
- fseek(target,0,SEEK_END);
- length=ftell(target);
- rewind(target);
- return length;
 }
 
 size_t get_name_without_extension_length(const char *source)
