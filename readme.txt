@@ -3,7 +3,7 @@
        A simple tool for converting an Adobe Flash movie to a standalone movie
                 This software was made by Popov Evgeniy Alekseyevich
 
-                               Version 1.6.7
+                               Version 1.6.8
 
 The program description.
 
@@ -26,6 +26,7 @@ Exit codes.
 6: The executable file of the Flash Player projector was corrupted.
 7: The Flash movie was corrupted.
 8: Can't get the file size!
+9: The command-line arguments is invalid!
 
 License.
 
@@ -64,3 +65,4 @@ Version history.
 1.6.4: The small changes.
 1.6.5: A small bug has been fixed.
 1.6.6-1.6.7: The small changes.
+1.6.8: The file processing has improved.
