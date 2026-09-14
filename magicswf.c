@@ -25,16 +25,21 @@ void work(const char *player,const char *flash);
 int main(int argc, char *argv[])
 {
  show_intro();
- if(argc<3)
+ if (argc<3)
  {
   puts("You must give the Flash Player Projector file name and the Flash movie file name as the command-line arguments!");
   exit(COMMAND_LINE_ARGUMENTS_ERROR);
  }
- else
+ if (argc==3)
  {
   puts("Working... Please wait");
   work(argv[1],argv[2]);
   puts("The work has been finished");
+ }
+ if (argc>3)
+ {
+  puts("You gave too many command-line arguments");
+  exit(COMMAND_LINE_ARGUMENTS_ERROR);
  }
  return 0;
 }
@@ -42,10 +47,10 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("Magic swf. Version 1.6.9");
+ puts("Magic swf 1.7");
  puts("A simple tool for converting an Adobe Flash movie to a standalone movie");
  puts("This sofware was made by Popov Evgeniy Alekseyevich,2011-2026 years");
- puts("This software is distributed under the GNU GENERAL PUBLIC LICENSE");
+ puts("This software is distributed under the GNU GENERAL PUBLIC LICENSE (version 2 or later) terms");
  putchar('\n');
 }
 
