@@ -3,7 +3,7 @@
        A simple tool for converting an Adobe Flash movie to a standalone movie
                 This software was made by Popov Evgeniy Alekseyevich
 
-                               Version 1.7.1
+                               Version 1.7.1.1
 
 The program description.
 
@@ -26,7 +26,7 @@ Exit codes.
 6: The executable file of the Flash Player projector was corrupted.
 7: The Flash movie was corrupted.
 8: Can't get the file size!
-9: The command-line arguments is invalid!
+9: The command-line arguments are invalid!
 
 License.
 
@@ -40,17 +40,17 @@ But you can do it with any modern C compiler.
 Version history.
 
 0.1-0.8: The unstable branch.
-0.9: The project name has changed. The stable branch.
+0.9: The project name has been changed. The stable branch.
 0.9.1-0.9.8: The small changes.
-0.9.9: A small bug has been fixed.
+0.9.9: The small bug has been fixed.
 1.0-1.1: The small changes.
 1.1.1: The source code was recompiled under Open Watcom.
 1.2-1.4.1: The small changes.
-1.4.2: A small bug has been fixed.
+1.4.2: The small bug has been fixed.
 1.4.3: The small changes.
 1.4.3.1-1.4.3.4: The documentation has been updated.
 1.4.4-1.4.8: The small changes.
-1.4.9: Visual C++ support has improved.
+1.4.9: Visual C++ support has been improved.
 1.4.9.1: The documentation has been updated.
 1.5: The small changes.
 1.5.0.1-1.5.0.2: The documentation has been updated.
@@ -59,11 +59,12 @@ Version history.
 1.5.2.1: The documentation has been updated.
 1.5.3: The small changes.
 1.5.3.1: The documentation has been updated.
-1.5.4: The compilation process has improved.
+1.5.4: The compilation process has been improved.
 1.5.5-1.6.2: The small changes.
-1.6.3: The file processing has improved.
+1.6.3: The file processing has been improved.
 1.6.4: The small changes.
-1.6.5: A small bug has been fixed.
+1.6.5: The small bug has been fixed.
 1.6.6-1.6.7: The small changes.
-1.6.8-1.6.9: The file processing has improved.
+1.6.8-1.6.9: The file processing has been improved.
 1.7-1.7.1: The small changes.
+1.7.1.1: The documentation has been updated.
